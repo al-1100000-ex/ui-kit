@@ -1,4 +1,7 @@
 playground/
-src/
-*.log
 node_modules/
+.idea/
+.vite/
+scripts/
+*.iml
+*.log
