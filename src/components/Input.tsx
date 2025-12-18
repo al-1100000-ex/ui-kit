@@ -1,29 +1,24 @@
-import { ChangeEvent } from "react";
-import './../styles.scss';
+import React, { ChangeEvent } from "react";
 
-interface Props {
-  name: string;
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
-  placeholder?: string;
-  value: string;
+  name: string;
   onChange: (key: string, value: string) => void;
-}
+  value: string;
+};
 
-export const Input = ({name, value, onChange, label, placeholder}: Props) => {
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    onChange(name, e.target.value);
-  }
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ label, name, onChange, value, ...props }, ref) => {
+    const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
+      onChange(name, e.target.value)
+    }
 
-  return (
-    <div className="input">
-      {label && <label htmlFor={name}>{label}</label>}
-      <input
-        name={name}
-        type="text"
-        placeholder={placeholder ?? label ?? ''}
-        onChange={handleChange}
-        value={value}
-      />
+    return (
+    <div className="ui-input">
+      {label ? <label>{label}</label> : null}
+      <input ref={ref} onChange={handleChange} value={value} {...props} />
     </div>
-  )
-}
+  )}
+);
+
+Input.displayName = "Input";

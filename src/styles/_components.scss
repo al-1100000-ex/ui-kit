@@ -1,0 +1,22 @@
+@use "./tokens" as *;
+
+.ui-input {
+  display: grid;
+  gap: 6px;
+
+  label {
+    font-size: 0.9rem;
+    opacity: 0.85;
+  }
+
+  input {
+    padding: 10px 12px;
+    border: 1px solid $ui-border;
+    border-radius: $ui-radius;
+    outline: none;
+
+    &:focus {
+      border-color: $ui-focus;
+    }
+  }
+}
