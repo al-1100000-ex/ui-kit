@@ -1,6 +1,6 @@
 {
   "name": "ui-kit",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,7 +13,6 @@
   "scripts": {
     "build": "vite build && tsc -p tsconfig.build.json",
     "prepare": "npm run build",
-
     "release:patch": "npm version patch && git push && git push --tags",
     "release:minor": "npm version minor && git push && git push --tags",
     "release:major": "npm version major && git push && git push --tags"
