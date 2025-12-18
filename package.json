@@ -1,28 +1,25 @@
 {
   "name": "ui-kit",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
   "type": "module",
   "main": "./dist/index.js",
-  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.js"
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
   },
   "scripts": {
-    "build": "vite build",
-    "playground": "npm --prefix playground run dev"
+    "build": "vite build && tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+
+    "release:patch": "npm version patch && git push && git push --tags",
+    "release:minor": "npm version minor && git push && git push --tags",
+    "release:major": "npm version major && git push && git push --tags"
   },
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
-  },
-  "devDependencies": {
-    "@types/node": "^25.0.3",
-    "@types/react": "^19.2.7",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^5.1.2",
-    "sass": "^1.97.0",
-    "typescript": "^5.9.3",
-    "vite": "^7.3.0"
   }
 }

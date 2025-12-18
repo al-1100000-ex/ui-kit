@@ -1,0 +1,4 @@
+playground/
+src/
+*.log
+node_modules/
