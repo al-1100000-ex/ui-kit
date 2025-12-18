@@ -6,5 +6,5 @@ interface Props {
     value: string;
     onChange: (key: string, value: string) => void;
 }
-declare const Input: ({ name, value, onChange, label, placeholder }: Props) => import("react/jsx-runtime").JSX.Element;
-export default Input;
+export declare const Input: ({ name, value, onChange, label, placeholder }: Props) => import("react/jsx-runtime").JSX.Element;
+export {};

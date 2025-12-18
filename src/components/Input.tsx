@@ -9,7 +9,7 @@ interface Props {
   onChange: (key: string, value: string) => void;
 }
 
-const Input = ({name, value, onChange, label, placeholder}: Props) => {
+export const Input = ({name, value, onChange, label, placeholder}: Props) => {
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     onChange(name, e.target.value);
   }
@@ -27,5 +27,3 @@ const Input = ({name, value, onChange, label, placeholder}: Props) => {
     </div>
   )
 }
-
-export default Input;
