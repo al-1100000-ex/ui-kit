@@ -276,7 +276,7 @@ const ae = L.forwardRef(
   ] })
 );
 ae.displayName = "Input";
-const se = ({ children: o, className: s, width: c }) => /* @__PURE__ */ v.jsx("div", { className: `.ui-view--view ${s}`, style: { width: c }, children: o }), le = ({ children: o, className: s, width: c }) => /* @__PURE__ */ v.jsx("div", { className: `.ui-view--flex ${s}`, style: { width: c }, children: o });
+const se = ({ children: o, className: s, width: c }) => /* @__PURE__ */ v.jsx("div", { className: `ui-view--view ${s}`, style: { width: c }, children: o }), le = ({ children: o, className: s, width: c }) => /* @__PURE__ */ v.jsx("div", { className: `ui-view--flex ${s}`, style: { width: c }, children: o });
 export {
   le as Flex,
   ae as Input,
