@@ -1,15 +1,17 @@
 import React from "react";
-type NativeProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "name" | "value" | "onChange">;
-export type InputProps = NativeProps & {
+export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "name" | "value" | "onChange"> & {
     label?: string;
     name: string;
     value: string;
     onChange: (key: string, value: string) => void;
+    errorText?: string;
+    warningText?: string;
 };
-export declare const Input: React.ForwardRefExoticComponent<NativeProps & {
+export declare const Input: React.ForwardRefExoticComponent<Omit<React.InputHTMLAttributes<HTMLInputElement>, "name" | "value" | "onChange"> & {
     label?: string;
     name: string;
     value: string;
     onChange: (key: string, value: string) => void;
+    errorText?: string;
+    warningText?: string;
 } & React.RefAttributes<HTMLInputElement>>;
-export {};
