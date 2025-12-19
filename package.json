@@ -6,16 +6,19 @@
   "types": "./dist/index.d.ts",
   "files": [
     "dist",
-    "src/styles"
+    "src/styles",
+    "types"
   ],
   "exports": {
     ".": {
       "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles.scss": "./src/styles/index.scss"
+    "./styles.scss": "./src/styles/index.scss",
+    "./types.ts": "./types/types.ts"
   },
   "scripts": {
+    "playground": "npm --prefix playground run dev",
     "build": "vite build && tsc -p tsconfig.build.json",
     "release:patch": "npm version patch && git push && git push --tags",
     "release:minor": "npm version minor && git push && git push --tags",

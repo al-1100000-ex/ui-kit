@@ -1,1 +1,1 @@
-export {Input} from "./components/Input";
+export {Input} from "./components/Inputs/Input";

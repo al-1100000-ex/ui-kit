@@ -10,7 +10,7 @@
   }
 
   input {
-    padding: 10px 12px;
+    padding: 6px;
     border: 1px solid $ui-border;
     border-radius: $ui-radius;
     outline: none;
@@ -18,5 +18,16 @@
     &:focus {
       border-color: $ui-focus;
     }
+  }
+}
+
+.ui-view {
+  &--view {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &--flex {
+    display: flex;
   }
 }

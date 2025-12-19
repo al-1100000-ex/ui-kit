@@ -1,16 +1,16 @@
-import Input from "../../src/components/Input.tsx";
+import { Input } from "../../src";
 import { useState } from "react";
 
 function App() {
-  const [val, setVal] = useState('');
+  const [value, setValue] = useState('');
 
   return (
     <div>
       <Input
-        name={'input'}
         label={'test'}
-        onChange={(_key, value) => setVal(value)}
-        value={val}
+        name={'test'}
+        onChange={(_key, value) => setValue(value)}
+        value={value}
       />
     </div>
   )

@@ -4,23 +4,23 @@ var $;
 function re() {
   if ($) return _;
   $ = 1;
-  var u = /* @__PURE__ */ Symbol.for("react.transitional.element"), d = /* @__PURE__ */ Symbol.for("react.fragment");
-  function l(c, o, s) {
-    var i = null;
-    if (s !== void 0 && (i = "" + s), o.key !== void 0 && (i = "" + o.key), "key" in o) {
+  var u = /* @__PURE__ */ Symbol.for("react.transitional.element"), l = /* @__PURE__ */ Symbol.for("react.fragment");
+  function c(i, o, s) {
+    var f = null;
+    if (s !== void 0 && (f = "" + s), o.key !== void 0 && (f = "" + o.key), "key" in o) {
       s = {};
-      for (var f in o)
-        f !== "key" && (s[f] = o[f]);
+      for (var m in o)
+        m !== "key" && (s[m] = o[m]);
     } else s = o;
     return o = s.ref, {
       $$typeof: u,
-      type: c,
-      key: i,
+      type: i,
+      key: f,
       ref: o !== void 0 ? o : null,
       props: s
     };
   }
-  return _.Fragment = d, _.jsx = l, _.jsxs = l, _;
+  return _.Fragment = l, _.jsx = c, _.jsxs = c, _;
 }
 var E = {};
 var F;
@@ -69,12 +69,12 @@ function te() {
         }
       return null;
     }
-    function d(e) {
+    function l(e) {
       return "" + e;
     }
-    function l(e) {
+    function c(e) {
       try {
-        d(e);
+        l(e);
         var r = !1;
       } catch {
         r = !0;
@@ -86,10 +86,10 @@ function te() {
           r,
           "The provided key is an unsupported type %s. This value must be coerced to a string before using it here.",
           n
-        ), d(e);
+        ), l(e);
       }
     }
-    function c(e) {
+    function i(e) {
       if (e === b) return "<>";
       if (typeof e == "object" && e !== null && e.$$typeof === T)
         return "<...>";
@@ -107,14 +107,14 @@ function te() {
     function s() {
       return Error("react-stack-top-frame");
     }
-    function i(e) {
-      if (y.call(e, "key")) {
+    function f(e) {
+      if (h.call(e, "key")) {
         var r = Object.getOwnPropertyDescriptor(e, "key").get;
         if (r && r.isReactWarning) return !1;
       }
       return e.key !== void 0;
     }
-    function f(e, r) {
+    function m(e, r) {
       function t() {
         g || (g = !0, console.error(
           "%s: `key` is not a prop. Trying to access it will result in `undefined` being returned. If you need to access the same value within the child component, you should pass it as a different prop. (https://react.dev/link/special-props)",
@@ -135,7 +135,7 @@ function te() {
     function W(e, r, t, n, p, A) {
       var a = t.ref;
       return e = {
-        $$typeof: w,
+        $$typeof: y,
         type: e,
         key: r,
         props: t,
@@ -171,19 +171,19 @@ function te() {
         if (n)
           if (K(a)) {
             for (n = 0; n < a.length; n++)
-              h(a[n]);
+              j(a[n]);
             Object.freeze && Object.freeze(a);
           } else
             console.error(
               "React.jsx: Static children should always be an array. You are likely explicitly calling React.jsxs or React.jsxDEV. Use the Babel transform instead."
             );
-        else h(a);
-      if (y.call(r, "key")) {
+        else j(a);
+      if (h.call(r, "key")) {
         a = u(e);
-        var m = Object.keys(r).filter(function(ee) {
+        var d = Object.keys(r).filter(function(ee) {
           return ee !== "key";
         });
-        n = 0 < m.length ? "{key: someKey, " + m.join(": ..., ") + ": ...}" : "{key: someKey}", I[a + n] || (m = 0 < m.length ? "{" + m.join(": ..., ") + ": ...}" : "{}", console.error(
+        n = 0 < d.length ? "{key: someKey, " + d.join(": ..., ") + ": ...}" : "{key: someKey}", I[a + n] || (d = 0 < d.length ? "{" + d.join(": ..., ") + ": ...}" : "{}", console.error(
           `A props object containing a "key" prop is being spread into JSX:
   let props = %s;
   <%s {...props} />
@@ -192,16 +192,16 @@ React keys must be passed directly to JSX without using spread:
   <%s key={someKey} {...props} />`,
           n,
           a,
-          m,
+          d,
           a
         ), I[a + n] = !0);
       }
-      if (a = null, t !== void 0 && (l(t), a = "" + t), i(r) && (l(r.key), a = "" + r.key), "key" in r) {
+      if (a = null, t !== void 0 && (c(t), a = "" + t), f(r) && (c(r.key), a = "" + r.key), "key" in r) {
         t = {};
         for (var S in r)
           S !== "key" && (t[S] = r[S]);
       } else t = r;
-      return a && f(
+      return a && m(
         t,
         typeof e == "function" ? e.displayName || e.name || "Unknown" : e
       ), W(
@@ -213,13 +213,13 @@ React keys must be passed directly to JSX without using spread:
         A
       );
     }
-    function h(e) {
-      j(e) ? e._store && (e._store.validated = 1) : typeof e == "object" && e !== null && e.$$typeof === T && (e._payload.status === "fulfilled" ? j(e._payload.value) && e._payload.value._store && (e._payload.value._store.validated = 1) : e._store && (e._store.validated = 1));
-    }
     function j(e) {
-      return typeof e == "object" && e !== null && e.$$typeof === w;
+      w(e) ? e._store && (e._store.validated = 1) : typeof e == "object" && e !== null && e.$$typeof === T && (e._payload.status === "fulfilled" ? w(e._payload.value) && e._payload.value._store && (e._payload.value._store.validated = 1) : e._store && (e._store.validated = 1));
     }
-    var R = L, w = /* @__PURE__ */ Symbol.for("react.transitional.element"), U = /* @__PURE__ */ Symbol.for("react.portal"), b = /* @__PURE__ */ Symbol.for("react.fragment"), q = /* @__PURE__ */ Symbol.for("react.strict_mode"), J = /* @__PURE__ */ Symbol.for("react.profiler"), V = /* @__PURE__ */ Symbol.for("react.consumer"), z = /* @__PURE__ */ Symbol.for("react.context"), G = /* @__PURE__ */ Symbol.for("react.forward_ref"), X = /* @__PURE__ */ Symbol.for("react.suspense"), B = /* @__PURE__ */ Symbol.for("react.suspense_list"), H = /* @__PURE__ */ Symbol.for("react.memo"), T = /* @__PURE__ */ Symbol.for("react.lazy"), Z = /* @__PURE__ */ Symbol.for("react.activity"), Q = /* @__PURE__ */ Symbol.for("react.client.reference"), k = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, y = Object.prototype.hasOwnProperty, K = Array.isArray, O = console.createTask ? console.createTask : function() {
+    function w(e) {
+      return typeof e == "object" && e !== null && e.$$typeof === y;
+    }
+    var R = L, y = /* @__PURE__ */ Symbol.for("react.transitional.element"), U = /* @__PURE__ */ Symbol.for("react.portal"), b = /* @__PURE__ */ Symbol.for("react.fragment"), q = /* @__PURE__ */ Symbol.for("react.strict_mode"), J = /* @__PURE__ */ Symbol.for("react.profiler"), V = /* @__PURE__ */ Symbol.for("react.consumer"), z = /* @__PURE__ */ Symbol.for("react.context"), G = /* @__PURE__ */ Symbol.for("react.forward_ref"), X = /* @__PURE__ */ Symbol.for("react.suspense"), B = /* @__PURE__ */ Symbol.for("react.suspense_list"), H = /* @__PURE__ */ Symbol.for("react.memo"), T = /* @__PURE__ */ Symbol.for("react.lazy"), Z = /* @__PURE__ */ Symbol.for("react.activity"), Q = /* @__PURE__ */ Symbol.for("react.client.reference"), k = R.__CLIENT_INTERNALS_DO_NOT_USE_OR_WARN_USERS_THEY_CANNOT_UPGRADE, h = Object.prototype.hasOwnProperty, K = Array.isArray, O = console.createTask ? console.createTask : function() {
       return null;
     };
     R = {
@@ -230,7 +230,7 @@ React keys must be passed directly to JSX without using spread:
     var g, N = {}, C = R.react_stack_bottom_frame.bind(
       R,
       s
-    )(), Y = O(c(s)), I = {};
+    )(), Y = O(i(s)), I = {};
     E.Fragment = b, E.jsx = function(e, r, t) {
       var n = 1e4 > k.recentlyCreatedOwnerStacks++;
       return P(
@@ -239,7 +239,7 @@ React keys must be passed directly to JSX without using spread:
         t,
         !1,
         n ? Error("react-stack-top-frame") : C,
-        n ? O(c(e)) : Y
+        n ? O(i(e)) : Y
       );
     }, E.jsxs = function(e, r, t) {
       var n = 1e4 > k.recentlyCreatedOwnerStacks++;
@@ -249,7 +249,7 @@ React keys must be passed directly to JSX without using spread:
         t,
         !0,
         n ? Error("react-stack-top-frame") : C,
-        n ? O(c(e)) : Y
+        n ? O(i(e)) : Y
       );
     };
   })()), E;
@@ -260,15 +260,20 @@ function ne() {
 }
 var x = ne();
 const ae = L.forwardRef(
-  ({ label: u, name: d, onChange: l, value: c, ...o }, s) => {
-    const i = (f) => {
-      l(d, f.target.value);
-    };
-    return /* @__PURE__ */ x.jsxs("div", { className: "ui-input", children: [
-      u ? /* @__PURE__ */ x.jsx("label", { children: u }) : null,
-      /* @__PURE__ */ x.jsx("input", { ref: s, onChange: i, value: c, ...o })
-    ] });
-  }
+  ({ label: u, name: l, onChange: c, value: i, ...o }, s) => /* @__PURE__ */ x.jsxs("div", { className: "ui-input", children: [
+    u ? /* @__PURE__ */ x.jsx("label", { htmlFor: l, children: u }) : null,
+    /* @__PURE__ */ x.jsx(
+      "input",
+      {
+        ref: s,
+        id: l,
+        name: l,
+        value: i,
+        onChange: (f) => c(l, f.target.value),
+        ...o
+      }
+    )
+  ] })
 );
 ae.displayName = "Input";
 export {
