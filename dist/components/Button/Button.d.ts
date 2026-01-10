@@ -1,6 +1,6 @@
-import React from "react";
+import { ReactNode } from "react";
 type Props = {
-    label: string | React.ReactNode;
+    label: string | ReactNode;
     onClick: () => void;
 };
 export declare const Button: ({ label, onClick }: Props) => import("react/jsx-runtime").JSX.Element;

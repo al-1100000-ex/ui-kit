@@ -1,7 +1,7 @@
-import React from "react";
+import { ReactNode } from "react";
 
 type Props = {
-  label: string | React.ReactNode;
+  label: string | ReactNode;
   onClick: () => void;
 }
 
