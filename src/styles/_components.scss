@@ -104,6 +104,10 @@ a {
     background-color: unset;
     border: 3px solid oklch(42.4% 0.199 265.638);
     color: oklch(42.4% 0.199 265.638);
+
+    &:hover {
+      background-color: oklch(97% 0.014 254.604);
+    }
   }
 }
 
