@@ -5,10 +5,8 @@ type Props = {
   onClick: () => void;
 }
 
-const Button = ({label, onClick}: Props) => {
+export const Button = ({label, onClick}: Props) => {
   return (
     <div className="ui-button" onClick={onClick}>{label}</div>
   )
 }
-
-export default Button;
