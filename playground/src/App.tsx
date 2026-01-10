@@ -1,4 +1,4 @@
-import Button from "../../src/components/Button/Button.tsx";
+import { Button } from "../../src/components/Button/Button.tsx";
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
       {/*  link={'https://alexhinterleitner.com/'}*/}
       {/*  image={'https://alexhinterleitner.com/homepage/src/Base/Media/Images/covers_cover.png'}*/}
       {/*/>*/}
-      <Button label={'test'} onClick={() => alert('clicked')} />
+      <Button label={'test'} customizable onClick={() => alert('clicked')} />
     </div>
   )
 }
