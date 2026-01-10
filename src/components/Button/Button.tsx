@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 
 type Props = {
   label: string | ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   customizable?: boolean;
 }
 
