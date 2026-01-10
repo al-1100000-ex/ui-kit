@@ -8,7 +8,7 @@ function App() {
       {/*  link={'https://alexhinterleitner.com/'}*/}
       {/*  image={'https://alexhinterleitner.com/homepage/src/Base/Media/Images/covers_cover.png'}*/}
       {/*/>*/}
-      <Button label={'Add to cart'} onClick={() => alert('clicked')} />
+      <Button label={'test'} onClick={() => alert('clicked')} />
     </div>
   )
 }
