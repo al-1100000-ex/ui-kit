@@ -1,4 +1,6 @@
 import { Button } from "../../src/components/Button/Button.tsx";
+import { IconText } from "../../src";
+import { ShoppingCart } from "./base/icons/ShoppingCart.tsx";
 
 function App() {
   return (
@@ -8,7 +10,7 @@ function App() {
       {/*  link={'https://alexhinterleitner.com/'}*/}
       {/*  image={'https://alexhinterleitner.com/homepage/src/Base/Media/Images/covers_cover.png'}*/}
       {/*/>*/}
-      <Button label={'test'} customizable onClick={() => alert('clicked')} />
+      <Button label={<IconText icon={<ShoppingCart />} text={'Add to cart'} />} onClick={() => alert('clicked')} />
     </div>
   )
 }
