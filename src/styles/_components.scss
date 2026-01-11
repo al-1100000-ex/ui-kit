@@ -104,7 +104,8 @@ a {
   }
 
   &--secondary {
-    color: #111;
+    color: #444;
+    border: 2px solid oklch(87.2% 0.01 258.338);
 
     &:hover {
       background-color: #ccc;
