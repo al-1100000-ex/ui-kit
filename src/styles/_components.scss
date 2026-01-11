@@ -83,8 +83,6 @@ a {
 
 .ui-button {
   width: 100%;
-  background-color: black;
-  color: white;
   padding: 12px;
   border: none;
   border-radius: 12px;
@@ -96,11 +94,24 @@ a {
   justify-content: center;
   align-items: center;
 
-  &:hover {
-    background-color: #222;
+  &--primary {
+    background-color: black;
+    color: white;
+
+    &:hover {
+      background-color: #222;
+    }
   }
 
-  &--customizable {
+  &--secondary {
+    color: #111;
+
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+
+  &--tertiary {
     background-color: unset;
     border: 3px solid oklch(42.4% 0.199 265.638);
     color: oklch(42.4% 0.199 265.638);
@@ -109,6 +120,32 @@ a {
       background-color: oklch(97% 0.014 254.604);
     }
   }
+
+  &--blue {
+    background-color: oklch(54.6% 0.245 262.881);
+    color: white;
+
+    &:hover {
+      background-color: oklch(48.8% 0.243 264.376);
+    }
+  }
+
+  &--danger {
+    background-color: #e53e3e;
+    color: white;
+
+    &:hover {
+      background-color: #c63333;
+    }
+  }
+
+  &--disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+    background-color: #999;
+    color: #333;
+  }
 }
 
 .ui-icon-text {
@@ -116,4 +153,8 @@ a {
   justify-content: center;
   align-items: center;
   gap: 12px;
+}
+
+.ui-row {
+  display: flex;
 }

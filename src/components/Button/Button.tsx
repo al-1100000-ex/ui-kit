@@ -3,11 +3,24 @@ import { ReactNode } from "react";
 type Props = {
   label: string | ReactNode;
   onClick?: () => void;
-  customizable?: boolean;
+  disabled?: boolean;
+  type?: 'primary' | 'secondary' | 'tertiary' | 'blue' | 'danger';
 }
 
-export const Button = ({label, onClick, customizable = false}: Props) => {
+export const Button = ({
+                         label,
+                         onClick,
+                         disabled = false,
+                         type = 'primary'
+                       }: Props
+) => {
+  let classNames = ['ui-button'];
+  if (!disabled) classNames.push(`ui-button--${type}`);
+  if (disabled) classNames.push('ui-button--disabled');
+
+  const className = classNames.join(' ');
+
   return (
-    <div className={`ui-button ${customizable ? 'ui-button--customizable' : ''}`} onClick={onClick}>{label}</div>
+    <div className={className} onClick={onClick}>{label}</div>
   )
 }
