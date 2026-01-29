@@ -4,6 +4,7 @@ export type InputProps = Omit<React.InputHTMLAttributes<HTMLInputElement>, "name
     name: string;
     value: string;
     onChange: (key: string, value: string) => void;
+    type: string;
     errorText?: string;
     warningText?: string;
 };
@@ -12,6 +13,7 @@ export declare const Input: React.ForwardRefExoticComponent<Omit<React.InputHTML
     name: string;
     value: string;
     onChange: (key: string, value: string) => void;
+    type: string;
     errorText?: string;
     warningText?: string;
 } & React.RefAttributes<HTMLInputElement>>;

@@ -1,6 +1,9 @@
-import { Button } from "../../src/components/Button/Button.tsx";
+import { Button, Input } from "../../src";
+import { useState } from "react";
 
 function App() {
+  const [test, setTest] = useState('')
+
   return (
     <div style={{margin: 20}}>
       {/*<Tile*/}
@@ -14,6 +17,9 @@ function App() {
       <Button label={'blue'} type={'blue'}  onClick={() => alert('clicked')} />
       <Button label={'danger'} type={'danger'}  onClick={() => alert('clicked')} />
       <Button label={'disabled'} disabled onClick={() => alert('clicked')} />
+      <hr/>
+      <Input name={'test'} label={'test'} type={'password'} value={test} onChange={(_key:string, value:string) => setTest(value)} />
+
     </div>
   )
 }
