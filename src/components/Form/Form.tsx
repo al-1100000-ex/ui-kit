@@ -1,35 +1,22 @@
 import React from "react";
+import { Input } from "../Inputs/Input";
 
-type Values = Record<string, FormDataEntryValue>;
+type Props = {
+  children: React.ReactNode;
+  onSubmit: () => void;
+  submitValue?: string;
+}
 
-export type FormProps = Omit<
-  React.FormHTMLAttributes<HTMLFormElement>,
-  "onSubmit"
-> & {
-  onSubmit?: (values: Values, e: React.FormEvent<HTMLFormElement>) => void;
-};
-
-export const Form = React.forwardRef<HTMLFormElement, FormProps>(
-  ({ onSubmit, ...props }, ref) => {
-    return (
-      <form
-        ref={ref}
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (!onSubmit) return;
-
-          const fd = new FormData(e.currentTarget);
-          const values: Record<string, FormDataEntryValue> = {};
-
-          fd.forEach((value, key) => {
-            values[key] = value;
-          });
-          onSubmit(values, e);
-        }}
-        {...props}
-      />
-    );
+export const Form = ({ children, onSubmit, submitValue }: Props) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    onSubmit();
   }
-);
 
-Form.displayName = "Form";
+  return (
+    <form onSubmit={handleSubmit}>
+      {children}
+      <Input name={'form__submit'} value={submitValue ?? 'Save'} type={'submit'} />
+    </form>
+  )
+}

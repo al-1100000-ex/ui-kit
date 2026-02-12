@@ -8,7 +8,7 @@ export type InputProps = Omit<
   label?: string;
   name: string;
   value: string;
-  onChange: (key: string, value: string) => void;
+  onChange?: (key: string, value: string) => void;
   type: string;
 
   errorText?: string;
@@ -39,7 +39,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
           name={name}
           type={type}
           value={value}
-          onChange={(e) => onChange(name, e.target.value)}
+          onChange={(e) => onChange ? onChange(name, e.target.value) : null}
           aria-invalid={!!errorText}
           {...props}
         />
