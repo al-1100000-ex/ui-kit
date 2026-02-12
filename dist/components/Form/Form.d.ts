@@ -2,7 +2,11 @@ import React from "react";
 type Props = {
     children: React.ReactNode;
     onSubmit: () => void;
-    submitValue?: string;
+    submitOptions?: {
+        value?: string;
+        disabled?: boolean;
+        type?: 'primary' | 'secondary' | 'tertiary' | 'blue' | 'danger';
+    };
 };
-export declare const Form: ({ children, onSubmit, submitValue }: Props) => import("react/jsx-runtime").JSX.Element;
+export declare const Form: ({ children, onSubmit, submitOptions }: Props) => import("react/jsx-runtime").JSX.Element;
 export {};
