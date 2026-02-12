@@ -16,7 +16,7 @@ export const Form = ({ children, onSubmit, submitValue }: Props) => {
   return (
     <form onSubmit={handleSubmit}>
       {children}
-      <Input name={'form__submit'} value={submitValue ?? 'Save'} type={'submit'} />
+      <Input name={'form__submit'} className={'ui-button'} value={submitValue ?? 'Save'} type={'submit'} />
     </form>
   )
 }

@@ -4859,7 +4859,7 @@ const ys = ({ children: e, className: r, width: t }) => /* @__PURE__ */ se.jsx("
   };
   return /* @__PURE__ */ se.jsxs("form", { onSubmit: n, children: [
     e,
-    /* @__PURE__ */ se.jsx(Nn, { name: "form__submit", value: t ?? "Save", type: "submit" })
+    /* @__PURE__ */ se.jsx(Nn, { name: "form__submit", className: "ui-button", value: t ?? "Save", type: "submit" })
   ] });
 };
 async function ms(e) {
